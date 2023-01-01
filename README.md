@@ -4,23 +4,41 @@ This project is a simple blog website written in Python, using the Django web fr
 ## Prerequisites
 To run this project, you will need to have the following installed on your local machine:
 
-Python
+Python 3.10.5
 
 ## Installation
+
+
 Clone the repository to your local machine:
 ```
-git clone https://github.com/theveloper-pl/PyBlogger.git
+    git clone https://github.com/theveloper-pl/PyBlogger.git
 ```
 
 Navigate to the project directory:
 ```
-cd GoBlogger
+    cd PyBlogger
 ```
 
+Create virtual env
+```
+    python -m venv env
+```
+
+Activate it
+```
+	source env/Scripts/activate
+```
+
+Install requirements
+```
+    pip install -r requirements.txt
+```
+
+Create .env file, use .env-sample as source
 
 Run the Website:
 ```
-go run main.go
+    python manage.py runserver
 ```
 
 The website will be running on localhost:8000.
