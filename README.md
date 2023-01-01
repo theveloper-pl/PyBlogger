@@ -14,11 +14,6 @@ Clone the repository to your local machine:
 git clone https://github.com/theveloper-pl/PyBlogger.git
 ```
 
-Navigate to the project directory:
-```
-cd PyBlogger
-```
-
 Create virtual env
 ```
 python -m venv env
@@ -32,6 +27,11 @@ source env/Scripts/activate
 Install requirements
 ```
 pip install -r requirements.txt
+```
+
+Navigate to the project directory:
+```
+cd PyBlogger
 ```
 
 Create .env file, use .env-sample as source
