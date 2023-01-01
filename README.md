@@ -26,18 +26,22 @@ source env/Scripts/activate
 
 Install requirements
 ```
-pip install -r requirements.txt
+pip install -r PyBlogger/requirements.txt
 ```
 
 Navigate to the project directory:
 ```
-cd PyBlogger
+cd PyBlogger/blogger
 ```
 
 Create .env file, use .env-sample as source
+```
+cp .env-sample .env
+```
 
 Run the Website:
 ```
+cd ..
 python manage.py runserver
 ```
 
