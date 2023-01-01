@@ -11,34 +11,34 @@ Python 3.10.5
 
 Clone the repository to your local machine:
 ```
-    git clone https://github.com/theveloper-pl/PyBlogger.git
+git clone https://github.com/theveloper-pl/PyBlogger.git
 ```
 
 Navigate to the project directory:
 ```
-    cd PyBlogger
+cd PyBlogger
 ```
 
 Create virtual env
 ```
-    python -m venv env
+python -m venv env
 ```
 
 Activate it
 ```
-	source env/Scripts/activate
+source env/Scripts/activate
 ```
 
 Install requirements
 ```
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Create .env file, use .env-sample as source
 
 Run the Website:
 ```
-    python manage.py runserver
+python manage.py runserver
 ```
 
 The website will be running on localhost:8000.
