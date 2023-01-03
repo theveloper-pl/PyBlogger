@@ -1,19 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from . import forms
+from django.contrib import messages,auth
+
 
 class LoginPageView(View):
-    template_name = 'login.html'
-    form_class = forms.LoginForm
-    
     def get(self, request):
-        form = self.form_class()
-        message = ''
-        return render(request, 'login.html', context={'form': form, 'message': message})
+        return render(request, 'login.html')
         
-    # def post(self, request):
-    #     email = request.POST['email']
-    #     password = request.POST['password']
-    #     user = auth.authenticate(email=email, password=password)
+    def post(self, request):
+        email = request.POST['email']
+        password = request.POST['password']
+        print(email, password)
+        user = auth.authenticate(email=email, password=password)
 
-    #     return render(request, 'login.html', context={'form': form, 'message': message})
+        if user is not None:
+            auth.login(request, user)
+            return redirect('PostListHomeView')
+        else:
+            return redirect('LoginPageView')

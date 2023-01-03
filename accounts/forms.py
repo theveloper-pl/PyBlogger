@@ -2,22 +2,6 @@
 from django import forms
 from .models import Account
 
-
-class LoginForm(forms.ModelForm):
-    password=forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Enter password'}))
-    class Meta:
-        model = Account
-        fields=['email','password']
-    def __init__(self,*args,**kwargs):
-        super(LoginForm,self).__init__(*args,**kwargs)
-        self.fields['email'].widget.attrs["placeholder"]='E-mail'
-        self.fields['password'].widget.attrs["placeholder"]='Password'
-        for field in self.fields:
-            self.fields[field].widget.attrs["class"]='form-control'
-    def clean(self):
-        cleander_data = super(LoginForm, self).clean()
-        return cleander_data
-
 class RegistrationForm(forms.ModelForm):
     password=forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Enter password'}))
     confirmpassword=forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Confirm password'}))
