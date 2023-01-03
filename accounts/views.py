@@ -6,7 +6,10 @@ from django.contrib import messages,auth
 
 class LoginPageView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        context = {}
+        context['title'] = 'Login'
+        context['description'] = 'Thats very useful option !'
+        return render(request, 'login.html', context)
         
     def post(self, request):
         email = request.POST['email']
