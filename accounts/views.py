@@ -22,3 +22,22 @@ class LoginPageView(View):
             return redirect('PostListHomeView')
         else:
             return redirect('LoginPageView')
+
+class RegisterPageView(View):
+    def get(self, request):
+        context = {}
+        context['title'] = 'Login'
+        context['description'] = 'Thats very useful option !'
+        return render(request, 'login.html', context)
+        
+    def post(self, request):
+        email = request.POST['email']
+        password = request.POST['password']
+        print(email, password)
+        user = auth.authenticate(email=email, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('PostListHomeView')
+        else:
+            return redirect('LoginPageView')
